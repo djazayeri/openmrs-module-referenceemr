@@ -1,6 +1,14 @@
 *.class
 
+target
+
+api/target
+
+omod/target
+
 # Package Files #
 *.jar
 *.war
 *.ear
+
+*.iml
