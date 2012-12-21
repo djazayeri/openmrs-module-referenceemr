@@ -48,6 +48,7 @@
         <serializationxstreamVersion>0.2.7</serializationxstreamVersion>
         <idgenVersion>2.4-SNAPSHOT</idgenVersion>
         <eventVersion>2.0.1</eventVersion>
+        <webservicesRestVersion>1.0</webservicesRestVersion>
         <uilibraryVersion>1.4</uilibraryVersion> <!-- Need to phase this out. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -129,6 +130,13 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>emr-api</artifactId>
             <version>${emrVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>webservices.rest-api</artifactId>
+            <version>${webservicesRestVersion}</version>
             <scope>provided</scope>
         </dependency>
 
