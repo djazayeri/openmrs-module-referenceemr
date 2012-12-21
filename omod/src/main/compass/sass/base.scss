@@ -1,0 +1,324 @@
+@import "normalize";
+@import "compass/css3";
+@import "font-awesome";
+@import "main-font";
+@import "mixins";
+
+body {
+  font-family: "OpenSans", Arial, sans-serif;
+  max-width: 1000px;
+  margin: 10px auto;
+  background: $bodyBackground;
+  color: $text;
+}
+
+#body-wrapper {
+  margin-top: 10px;
+  padding: 20px;
+  @include border-radius(5px);
+  background-color: white;
+}
+
+table {
+  margin: 0 auto;
+}
+
+i {
+  font-size: 4em;
+  padding: 0.2em;
+  &.link {
+    font-size: 0.7em;
+  }
+  &.small {
+    font-size: 1.2em;
+  }
+  &.medium {
+    font-size: 2em;
+  }
+}
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid $white;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  &:hover {
+    color: lighten($link, 10%);
+    text-decoration: underline;
+  }
+  &:visited, &.visited {
+    color: darken($link, 10%);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $highlight;
+  clear: both;
+  margin: 10px 0;
+}
+h1 {
+  font-size: 2em;
+  margin: 10px 0 20px 0;
+}
+h2 {
+  font-size: 1.67em;
+  color: lighten($highlight, 15%);
+  em {
+    font-size: 0.7em;
+    color: lighten($highlight, 30%);
+    display: block;
+  }
+}
+h3 {
+  font-size: 1.5em;
+
+}
+
+h4 {
+  font-size: 1.33em;
+  color: lighten($highlight, 15%);
+}
+h5 {
+  font-size: 1.17em;
+}
+h6 {
+  font-size: 1.13em;
+  color: lighten($highlight, 15%);
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+form {
+  overflow: hidden;
+  input, select, textarea, ul.select {
+    min-width: 80%;
+    color: $text;
+    display: block;
+    padding: 5px 10px;
+    margin: 0;
+    margin-top: 3%;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    &:focus {
+      outline: none;
+      background: $focus;
+    }
+  }
+
+  select[disabled] {
+    color: graytext;
+    border: 1px solid;
+    background-color: white;
+  }
+
+  ul.select {
+    margin-top: 0;
+  }
+
+  fieldset {
+    border: 1px solid #EEE;
+    display: inline-block;
+    padding: 20px;
+    min-width: 60%;
+
+    legend {
+      text-align: left;
+      padding: 0 10px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+
+  label {
+    display: block;
+    text-align: left
+  }
+
+  p {
+    text-align: right;
+
+    strong {
+      display: block;
+      text-align: left;
+      clear: both;
+    }
+  }
+
+  input[type="checkbox"], input[type="radio"] {
+    min-width: 0;
+    padding: 0;
+    margin: 5px;
+    float: left;
+  }
+
+  input[type="submit"], input[type="button"] {
+    @include button;
+    margin-top: 30px;
+    display: inline-block;
+    min-width: 0;
+  }
+}
+
+ul.select {
+  text-align: left;
+  margin: 0 20px;
+  padding: 0;
+  li {
+    text-align: left;
+    display: inline-block;
+    width: 250px;
+    padding: 5px;
+    color: $link;
+    background-color: #FFF;
+    border-bottom: 1px solid #EFEFEF;
+    margin: 0 10px;
+    &:hover {
+      background-color: $link;
+      color: white;
+      cursor: pointer;
+    }
+    &.selected {
+      background-color: $link;
+      color: white;
+      border-color: transparent;
+    }
+  }
+}
+
+table {
+  display : inline;
+  font-size: 0.9em;
+  th, td {
+    padding: 5px 10px;
+    border: 1px solid #DDD;
+  }
+  tr {
+    border: 1px solid $bodyBackground;
+  }
+  tr:nth-child(even) {
+    background: $focus;
+  }
+  tr:nth-child(odd) {
+    background: white;
+  }
+  tr.hover{
+    background: lighten($link, 15%);
+    color: white;
+    cursor: pointer;
+  }
+  tr.selected{
+    background: $link;
+    color: white;
+  }
+  thead th {
+    border-bottom: 2px solid #DDD;
+    background: $bodyBackground;
+    width: auto;
+  }
+}
+
+
+.title {
+  font-weight: 700;
+  font-family: "OpenSansBold"
+}
+
+.body {
+  font-weight: 400;
+}
+
+.small {
+  font-weight: 300;
+  font-family: "OpenSansLight"
+}
+
+.clear {
+  clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.button, button, input[type="submit"], input[type="button"], a.button {
+  @include button;
+  &.confirm {
+    @include button($success, darken($success, 8%), white);
+  }
+
+  &.cancel {
+    @include button($error, darken($error, 8%), white);
+  }
+}
+
+.note {
+  padding: 10px;
+  margin: 20px 0;
+  overflow: hidden;
+  clear: both;
+
+  .icon {
+    float: left;
+    i {
+      padding: 0;
+      padding-right: 20px;
+    }
+  }
+
+  .text {
+    display: inline-block;
+    width: 90%;
+    padding-left: 35px;
+
+    p {
+      margin: 5px;
+      text-align: left;
+    }
+  }
+
+  &.warning, &.success, &.error {
+    border: 1px solid transparent;
+  }
+
+  &.warning {
+    background: lighten($alert, 10%);
+    border-color: $alert;
+  }
+
+  &.success {
+    background: lighten($success, 10%);
+    border-color: $success
+  }
+
+  &.error {
+    background: lighten($error, 10%);
+    border-color: $error;
+    color: white;
+  }
+}

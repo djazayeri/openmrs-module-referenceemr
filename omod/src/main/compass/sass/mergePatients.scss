@@ -1,0 +1,136 @@
+@import "colors";
+@import "base";
+
+/*.non-preferred-patient {
+  background-color: $lighterGrey;
+  padding: 0.5em;
+  vertical-align: top;
+  display:block;
+  float:left;
+
+  .section-heading {
+    color: #6B6B6B;
+    font-weight: bold;
+    padding-bottom: 0.3em;
+  }
+
+}
+
+.preferred-patient {
+  background-color: lighten($pihSecondaryDarkBlue, 40);
+  padding: 0.5em;
+  vertical-align: top;
+  border-width: 2px;
+  border-color: $black;
+  border-style:solid;
+  display:block;
+  float:left;
+
+
+  .section-heading {
+    color: $white;
+    font-weight: bold;
+    padding-bottom: 0.3em;
+  }
+
+}*/
+
+.patient {
+  background: #F9F9F9;
+  border: 2px solid #CCC;
+  width: 320px;
+  float: left;
+  @include border-radius(4px);
+  .row {
+    padding: 10px;
+    background: #EAEAEA;
+    margin: 1px;
+    div {
+      span { display: block }
+    }
+  }
+  h3 {
+    font-size: 1.2em;
+    margin: 0
+  }
+  &.selected {
+    background: lighten($link, 20%);
+    border-color: $link;
+    .row {
+      background: $link;
+      h3 {
+        color: #003F5E;
+      }
+      div {
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.address{
+  height:200px;
+}
+
+.identifiers {
+  height: 90px;
+}
+
+h2{
+  em{
+    display: block;
+  }
+}
+
+.name {
+  height: 90px;
+}
+
+.section-content {
+  padding-left: 1em;
+  padding-bottom: 0.7em;
+}
+
+.spacer {
+  width: 20px;
+}
+
+.separator{
+  display:block;
+  float:left;
+  margin: 30% 0;
+  width:73px;
+}
+
+.person-address {
+  display: inline-block;
+  border-bottom: 1px $darkerGrey solid;
+}
+
+.buttons{
+  display: inline-block;
+}
+
+.messages-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 750px;
+    display: inline-block;
+
+  .message{
+    display: inline-block;
+  }
+
+  .message-bold{
+    display: inline-block;
+    padding-bottom: 4px;
+    font-weight: bold;
+  }
+  .message-title{
+    font-size: 22px;
+    display: inline-block;
+    padding-bottom: 6px;
+    font-weight: bold;
+  }
+}
+

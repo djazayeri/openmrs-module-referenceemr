@@ -1,0 +1,32 @@
+@import "colors";
+
+hr.separator {
+  width: 60%;
+}
+
+#apps {
+  width: 83%;
+  margin: 0 auto;
+
+  .button {
+    padding: 20px 10px;
+    width: 150px;
+    height: 70px;
+    vertical-align: top;
+    line-height: 1.4em;
+    margin: 10px;
+    text-align: center;
+  }
+}
+
+#search-field-search {
+  margin: 75px auto;
+  font-size: 20px;
+  background: {
+    image: url(../images/scan_barcode.png);
+    repeat: no-repeat;
+    position: right center;
+    size: 30px;
+    origin: content-box;
+  }
+}
